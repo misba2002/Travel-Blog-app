@@ -6,7 +6,7 @@ A web application where users can upload, share, and view travel stories with im
 
 - **Create a post**: Users can upload their travel experiences with images.
 - **View posts**: Users can see others' travel posts and as well as their own.
-- **User authentication**: Secure login and session management (you can add this later with Passport.js).
+- **User authentication**: Secure login and log-off 
 - **Responsive Design**: The app works well on both desktop and mobile devices.
 
 ## Tech Stack
