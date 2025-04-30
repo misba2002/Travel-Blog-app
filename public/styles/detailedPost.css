@@ -1,0 +1,31 @@
+
+body{
+    background-image: url("/images/addPost-background.jpg");
+    background-size: cover;
+    background-position: initial;
+    background-repeat: no-repeat;
+    margin: 100px;
+   
+}
+
+.container img{
+    border: solid 5px rgba(139, 201, 189, 0.74);
+    object-fit:cover;
+    border-radius: 10%;
+    
+}
+
+.text-d{
+   font-family: cursive;
+   font-style: italic;
+   color: rgba(42, 168, 247, 0.925);
+}
+
+.story{
+    font-family: cursive;
+   font-style: italic;
+    color: black;
+    font-size: 30px;
+    font-weight:500;
+}
+

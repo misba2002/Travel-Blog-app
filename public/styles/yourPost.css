@@ -1,0 +1,14 @@
+body{
+    background-image: url("/images/addPost-background.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+   background-position: initial;
+   
+
+}
+.twin-img{
+    height: 500px;
+    object-fit: cover;
+    width: 100%;
+    
+}

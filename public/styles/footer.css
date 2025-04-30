@@ -1,0 +1,43 @@
+.sticky-footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    color:#88b04b ;
+    font-size: 25px;
+    border-top: 1px solid #555;
+   
+   
+  }
+  
+  .footer-link {
+    color: #00ff0d; /* consistent color */
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .footer-link:hover {
+    color: #ffffff;
+    text-shadow: 0 0 6px #88b04b;
+  }
+
+  @media(max-width:570px){
+    .footer-link{
+      font-size: 16px;
+      padding: 10px 0;
+    }
+  }
+
+  .active-footer {
+  color: #e7d12e !important;
+  font-weight: bold;
+}
+
+.footer-link svg{
+ 
+  display: block;
+  height: 25px;
+  width: 25px;
+}

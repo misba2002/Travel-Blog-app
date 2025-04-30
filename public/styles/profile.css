@@ -1,0 +1,87 @@
+body{
+    background-image: url("/images/addPost-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:initial;
+}
+.pro-content{
+   
+    justify-content: center;
+    align-items: center;
+}
+.profile-img{
+    height: 350px;
+    width:350px ;
+    border:  solid 2px whitesmoke;
+    border-radius: 50%;
+    box-shadow:0 0 10px rgb(101, 124, 154);
+    overflow: hidden;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    
+  
+}
+
+.profile-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.pro-content p{
+     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     font-style: italic;
+     font-size: 28px;
+     color: rgb(46, 97, 97);
+   
+}
+.pro-content h2{
+    font-size: 4rem;
+    font-style: italic;
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0 0 8px rgb(123, 229, 206), 0 0 12px rgb(145, 239, 128), 0 0 16px rgb(240, 80, 80);
+    color:#88b04b;
+}
+ .pro-content .label{
+   
+    color: #318fba; 
+    font-size: 30px;
+    letter-spacing: 0.5px;
+    margin-right: 5px;
+    font-style: italic;
+    font-family:cursive;
+ }
+
+
+ @media (max-width: 985px) {
+    .profile-img {
+      height: auto;
+      width: 100%;
+      border-radius: 50%;
+    }
+    
+  }
+  
+  @media (max-width: 437px) {
+    .profile-img {
+      height: auto;
+      width: 100%;
+      border-radius: 50%;
+    }
+    .pro-content h2{
+        font-size: 30px;
+    }
+    .pro-content .label{
+       font-size: 25px;
+    }
+    .pro-content p{
+        font-size: 23px;
+    }
+  }
+
+
+ 

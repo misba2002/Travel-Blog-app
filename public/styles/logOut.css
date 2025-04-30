@@ -1,0 +1,15 @@
+
+
+body{
+    background-image: url("/images/addPost-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+
+.bg-image{
+  background-image: url("/images/addPost-background.jpg");
+  background-size: cover;
+  background-position: initial;
+  background-repeat: no-repeat;
+}

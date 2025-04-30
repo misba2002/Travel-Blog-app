@@ -1,0 +1,61 @@
+
+body{
+  
+    background-color:#2d2d2d ;
+}
+
+.custom-svg{
+    width: 100px;
+    height: 120px;
+    color: #88b04b;
+}
+
+.logo-img{
+  height: 120px;
+  width: 200px;
+  object-fit:cover;
+  border-radius: 50%;
+
+}
+ 
+  .pattaya-regular {
+    font-family: "Pattaya", sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    color: #88b04b;
+    font-style: normal;
+  }
+  .fst-italic{
+    color: #88b04b;
+  }
+
+  .sidebar{
+    background-color: #212529 !important;
+    transition: all 0.3s ease;
+    position: fixed;
+    top:136.667px;
+    right:0;
+    height: 100vh;
+    height: 400px;
+    width: 280px;
+    z-index: 1050;
+    
+  }
+
+@media(max-width:405px){
+  .logo-img{
+    height: 60px;
+    width: 80px;
+  }
+  
+}
+    
+  
+  
+
+
+
+
+/* 
+Muted Green (#88b04b) → For buttons & links */
+

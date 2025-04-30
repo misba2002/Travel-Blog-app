@@ -1,0 +1,105 @@
+
+body{
+background-image: url("/images/addPost-background.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+background-position:initial;
+
+}
+
+
+.form-style{
+    width: 90%;
+    max-width: 700px;
+    height: auto;
+    border: solid white 5px;
+    border-radius: 5%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    padding: 25px;
+    margin: 50px auto;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    background-image:url("../images/form-background.jpg") ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:initial;
+    overflow: hidden;
+    
+
+}
+
+.form-style label{
+    display: inline-block;
+    width: 30%;
+    border: solid 1px black;
+    background-color: rgb(222, 246, 193);
+    padding: 10px;
+    margin: 10px 10px 10px 0;
+    width: 200px;
+    font-weight: bold;
+    font-size: 20px;
+    height: 50px;
+    vertical-align: top;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    
+    
+}
+
+.form-style input,button,textarea{
+    width: 65%;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    background-color: azure;
+    font-weight: bold;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    height: 50px;
+    max-width: 300px;
+    vertical-align: top;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.form-style textarea {
+   
+    resize: vertical;
+    height: auto;
+    min-height: 150px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  }
+
+  .form-style button {
+    background-color: #88b04b; /* */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    margin: 10px auto;
+    display: block;
+    width: 50%;
+  }
+
+  .form-style button:hover {
+    background-color: #45a049; /* Slightly darker green */
+    transform: translateY(-2px); /* Subtle lift on hover */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  }
+
+  @media (max-width: 680px) {
+    .form-style label,
+  .form-style input,
+  .form-style textarea {
+    display: block;
+    width: 100%;
+  }
+
+  .form-style input,
+  .form-style textarea {
+    margin-left: 0; /* optional: prevents indenting under labels */
+  }
+}
+  
