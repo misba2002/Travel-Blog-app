@@ -9,7 +9,7 @@ import { error } from "console";
 
 
 const app=express();
-const port =3000;
+const port= process.env.PORT || 4000
 let posts=[];
 const profilePath=path.join("Data","profile.json");
 app.use(express.static("public"));
