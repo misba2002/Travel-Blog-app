@@ -29,3 +29,9 @@ body{
     font-weight:500;
 }
 
+.deleteBtn{
+    margin-top: 0.5rem;
+    padding: 8px 22px !important;
+   
+
+}

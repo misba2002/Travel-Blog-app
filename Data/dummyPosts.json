@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "dummy1",
+    "userName": "Diksha,India",
+    "pDate": "NOV 12,2024",
+    "Destination": "Cartagena, Colombia 🌅",
+    "yourStory": "This was my first solo trip to Cartagena Colombia 👩🏻‍🦰,a city full of memories to cherish forever and forever.",
+    "imagePath": "/images/Cartagena,Colombia.jpg"
+  },
+  {
+    "Id": "dummy2",
+    "userName": "Conrad,US",
+    "pDate": "JAN 15,2023",
+    "Destination": "My Phuket,Thailand trip!🌊",
+    "yourStory": "🏝️ Paradise Found in Phuket. From turquoise tides to golden sunsets — every moment is a postcard.",
+    "imagePath": "/images/phuket,thailand.jpg"
+  },
+  {
+    "Id": "dummy3",
+    "userName": "Ira,Egypt",
+    "pDate": "DEC 15,2020",
+    "Destination": "Rio de Janeiro,Brazil–🌴",
+    "yourStory": "Where Even Statues Throw Shade 😎 Danced with strangers, got sunburnt, and almost joined a samba band. Lost my flip-flops but found my rhythm!. 😂🌴💃",
+    "imagePath": "/images/Rio de Janeiro,Brazil.jpg"
+  },
+  {
+    "Id": "dummy4",
+    "userName": "Martin,Spain",
+    "pDate": "SEPT 21,2021",
+    "Destination": "Meghalaya,India –Paradise🌧️🏞️",
+    "yourStory": "Where clouds kiss the hills and waterfalls whisper secrets. Nature’s symphony plays loud in every raindrop and smile.🌧️⛰️💚",
+    "imagePath": "/images/meghalaya,India.jpg"
+  }
+]

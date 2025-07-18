@@ -4,8 +4,7 @@ import multer from "multer";
 import fs, { read } from "fs";
 import path from "path"
 import { fileURLToPath } from "url";
-import { title } from "process";
-import { error } from "console";
+
 
 
 const app=express();
@@ -16,6 +15,25 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));//can use app.use(express.urlencoded({extended:true}));
 
 
+// handling dummy post
+const dummyFilePath = path.join("Data", "dummyPosts.json");
+
+let dummyPosts = []; // will hold dummy posts in memory
+
+fs.readFile(dummyFilePath, "utf-8", (err, data) => {
+  if (!err && data) {
+    try {
+      dummyPosts = JSON.parse(data);
+      console.log(`Loaded ${dummyPosts.length} dummy posts.`);
+    } catch (e) {
+      console.error("Error parsing dummyPosts.json:", e.message);
+    }
+  } else {
+    console.error("Failed to read dummyPosts.json:", err?.message || "No data");
+  }
+});
+
+// image saving 
 const storage = multer.diskStorage({
 
     destination:(req,file,cb)=>{
@@ -35,7 +53,9 @@ const storage = multer.diskStorage({
 const multerThings=multer({storage:storage});
 const dataFilePath=path.join("Data","userPost.json");
 
+
 function loadPost(callback){
+    
     fs.readFile(dataFilePath,"utf-8",(readErr,data)=>{
           if(!readErr && data){
             try{
@@ -52,6 +72,9 @@ function loadPost(callback){
           callback(posts);
     });
 }
+
+
+
 
 app.get("/",(req,res)=>{
     loadPost((postData)=>{
@@ -120,10 +143,20 @@ app.get("/yourPost",(req,res)=>{
 app.get("/detailedPost/:id",(req,res)=>{
     const postId=req.params.id;
     loadPost((postData)=>{
-         const foundPost =postData.find(post=>post.Id===postId);
+         let foundPost =postData.find(post=>post.Id===postId);
+           let isDummy = false;
+
+
+          if (!foundPost) {
+      // check dummyPosts if not found in real posts
+           foundPost = dummyPosts.find(post => post.Id === postId);
+            if (foundPost) isDummy = true;
+           }
+
          if(foundPost){
             res.render("detailedPost.ejs",{
                 post:foundPost,
+                 isDummy: isDummy
             });
          }else{
             console.log("post not found!");
@@ -281,7 +314,7 @@ app.get("/profile", (req, res) => {
                     fs.writeFile(profilePath,"{}",(err)=>{
                          if(err){
                             console.log("Error clearing file:", err);
-                            return res.render("error.ejs", { message: err });
+                            return res.status(400).json({ success: false, message: "Error clearing file. Try again." });
                          }
                          else{
                            
@@ -291,9 +324,8 @@ app.get("/profile", (req, res) => {
                 }else {
                     // If email/password wrong
                     console.log("Failed to log out: Email or password incorrect. Try again.");
-                    return res.render("error.ejs",{
-                        message:"hi i am error!",
-                    });
+                    return res.status(400).json({ success: false, message: "Email or password incorrect. Try again." });
+                    
           
                   
                 }
@@ -311,6 +343,51 @@ app.get("/profile", (req, res) => {
           
        });
   });
+
+
+  app.get("/search", (req, res) => {
+  res.render("search.ejs", {
+    posts: null,
+    query: "",
+    activePage: "search"
+  });
+});
+
+app.get("/searchResults", (req, res) => {
+  const query = req.query.q?.toLowerCase() || "";
+  let allPosts = [];
+
+  loadPost((userPosts) => {
+    allPosts = [...userPosts];
+
+    // Load dummy posts
+    fs.readFile(dummyFilePath, "utf-8", (err, dummyData) => {
+      if (!err && dummyData) {
+        try {
+          const dummyPostsParsed = JSON.parse(dummyData);
+          allPosts.push(...dummyPostsParsed);
+        } catch (e) {
+          console.error("Failed to parse dummyPosts:", e.message);
+        }
+      }
+
+      const filteredPosts = allPosts.filter(post => {
+        return (
+          post.Destination?.toLowerCase().includes(query) ||
+          post.userName?.toLowerCase().includes(query) ||
+          post.yourStory?.toLowerCase().includes(query)
+        );
+      });
+
+      res.render("search.ejs", {
+        posts: filteredPosts,
+        query: req.query.q,
+        activePage: "search"
+      });
+    });
+  });
+});
+
 
 
 app.listen(port,()=>{

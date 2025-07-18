@@ -32,12 +32,13 @@ logoutButton.addEventListener("click",function(e){
                 },2000);
             }
             else{
-                alert("logging off faild please try again later!");
+                alert(data.message || "Logging off failed, please try again later!");
             }
         });
     })
     .catch((err)=>{
         console.log("server side error pls try again:"+err);
+         alert("Server error. Please try again later.");
          
 
     });

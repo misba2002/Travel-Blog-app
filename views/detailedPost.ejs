@@ -16,8 +16,15 @@
       
         <p class="mb-3 story">:<%=post.yourStory  %></p>
         <p class="mb-3 story">:<%= post.pDate %></p>
-        <a href="/yourPost" class="btn btn-primary btn-lg px-4 gap-3">Back</a>
-        <a href="/delete/<%= post.Id %>" class="btn btn-primary btn-lg px-4 gap-3  btn-danger"  onclick="return confirm('Are you sure you want to delete this post?')">Delete</a>
+        <a href="/" class="btn btn-primary btn-lg px-4 gap-3">Back</a>
+        <% if (!isDummy) { %>
+       <form action="/delete/<%= post.Id %>" method="get" onsubmit="return confirm('Are you sure you want to delete this post?');">
+       <button type="submit" class="btn deleteBtn btn-danger">Delete</button>
+       </form>
+        <% } else { %>
+        <p class="text-warning mt-3">⚠️ This is diffrent user data and cannot be deleted from your end.</p>
+        <% } %>
+        <!-- <a href="/delete/<%= post.Id %>" class="btn btn-primary btn-lg px-4 gap-3  btn-danger"  onclick="return confirm('Are you sure you want to delete this post?')">Delete</a> -->
       </div>
     </div>
   </div>
