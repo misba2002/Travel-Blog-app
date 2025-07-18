@@ -49,6 +49,9 @@ A web application where users can upload, share, and view travel stories with im
 5.**Access the app in your browser at**:
   http://localhost:3000
 
+6.**Access the app in live demo**:
+  https://travel-blog-app-eat0.onrender.com/
+
 -**Troubleshooting**
 -**If you run into issues with npm install, make sure you're using a compatible version of Node.js**.
 
