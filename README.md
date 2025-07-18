@@ -12,14 +12,14 @@ A web application where users can upload, share, and view travel stories with im
 - **About the Application**
   This is a travel blog application where users can upload and share their travel stories with images.
 
-**Dummy Data**
-  The main page of the application currently displays dummy data. You can click on the "Continue Reading" anchor link, but it won't lead anywhere as it's part of the dummy content.
-
 **To See Your Own Posts**
  To start uploading and viewing your own posts, you need to sign in first.
 
  Once signed in, you can upload your travel stories, and your posts will appear on the website!
-
+ 
+**🆕 Features  added**:
+Implemented Search functionality:
+-Search by destination, userName, or yourStory (both user posts & other user posts)
 
 
 ## Tech Stack
